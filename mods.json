@@ -1,0 +1,67 @@
+[
+  {
+    "file_name": "UA_THB_v1.88.71_FULL.zip",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/UA_THB_v1.88.71_FULL.zip"
+  },
+  {
+    "file_name": "UA_THB_1.88.71_minipatch.7z",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/UA_THB_1.88.71_minipatch.7z"
+  },
+  {
+    "file_name": "UA Patch - Version 1.88.72.zip",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/UA Patch - Version 1.88.72.zip"
+  },
+  {
+    "file_name": "Tyranid_Mod_0.5b2_Installer.exe",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Tyranid_Mod_0.5b2_Installer.exe"
+  },
+  {
+    "file_name": "DoW_Mod_Manager_v1.4.7z",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/DoW_Mod_Manager_v1.4.7z"
+  },
+  {
+    "file_name": "4gb_patch.exe",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/4gb_patch.exe"
+  },
+  {
+    "file_name": "Salcols 1.21.7z",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Salcols%201.21.7z"
+  },
+  {
+    "file_name": "1.22.7z",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/1.22.7z"
+  },
+  {
+    "file_name": "Red_I_Map_Compilation_Revision_III.rar",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Red_I_Map_Compilation_Revision_III.rar",
+    "extract_locations": ["DXP2"]
+  },
+  {
+    "file_name": "Red_II_Map_Compilation.rar",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Red_II_Map_Compilation.rar",
+    "extract_locations": [
+      "UltimateApocalypse_THB/data/scenarios/mp",
+      "DXP2/data/scenarios/mp"
+    ]
+  },
+  {
+    "file_name": "Red_III_Map_Compilation_Revision_II.rar",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Red_III_Map_Compilation_Revision_II.rar",
+    "extract_locations": ["DXP2"]
+  },
+  {
+    "file_name": "Niels_Dutka_Map_Compilation.1.rar",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Niels_Dutka_Map_Compilation.1.rar",
+    "extract_locations": ["DXP2/data/scenarios/mp"]
+  },
+  {
+    "file_name": "Art_Repository.rar",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/Art_Repository.rar",
+    "extract_locations": ["DXP2/data"]
+  },
+  {
+    "file_name": "dawn_of_war_maps.rar",
+    "download_link": "https://srv-file6.gofile.io/download/kEKVA8/dawn_of_war_maps.rar",
+    "extract_locations": ["DXP2/data"]
+  }
+]
