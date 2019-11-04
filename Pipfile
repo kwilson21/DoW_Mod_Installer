@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = {git = "https://github.com/psf/black.git"}
+pylint = "*"
+
+[packages]
+wget = "*"
+pyinstaller = {file = "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz"}
+
+[requires]
+python_version = "3.8"
