@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "name": "DoW-Mod-Installer",
+  "description": "DoW Mod Installer is a desktop application designed to automate the process of installing mods mods for Dawn of War Soulstorm.",
+  "version": "2.0.0",
+  "author": "Kazon Wilson <kazonwilson@gmail.com>",
+  "main": "app/background.js",
+  "scripts": {
+    "dev": "nextron",
+    "build": "nextron build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.0.3",
+    "electron-serve": "^1.0.0",
+    "electron-store": "^5.2.0",
+    "electron-unhandled": "^3.0.2",
+    "is-archive": "^2.0.0",
+    "lodash": "^4.17.19",
+    "node-7z": "^2.1.1",
+    "react-json-view": "^1.19.1",
+    "react-toastify": "^6.0.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^4.2.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "electron": "^9.0.3",
+    "electron-builder": "^22.7.0",
+    "next": "^9.3.6",
+    "nextron": "^5.15.0",
+    "null-loader": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.43.0"
+  }
+}
