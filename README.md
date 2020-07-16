@@ -1,14 +1,35 @@
 # DoW Mod Installer
 
-A python script created to automate the installation of mods for Dawn of War Soulstorm.
+DoW Mod Installer is a desktop application designed to automate the process of installing mods mods for Dawn of War Soulstorm.
 
-## Getting Started
+## About
 
-This script is designed for the laziest/least computer savy, all the script requires you to have is Dawn of War Soulstorm and 7zip installed. Installing Python is optional as the release version of this script is compiled into an .exe using pyinstaller. When running the script, it will search for your soulstorm and 7zip directories, if it cannot find the directories, you will have the option to manually input the directories. Upon completion of all the extractions, you must manually install the tyranids mod and apply the 4gb patch to your soulstorm.exe and graphicsconfig.exe.
+I personally use this app to ease the set up process for the 7+ group of friends that I play with. Before using this app, the process of ensuring that all of my friends installed each mod one-by-one and in the exact order specified caused a lot of issues that took an extremly long time to troubleshoot. Because of this, I developed Dow Mod Installer to make the installation process as painless as possible.
 
-## Configuring the script
+## Usage
 
-To add/remove mods to the script, simply edit the mods.json file. I suggest logging into gofile.com and re-uploading your mods there as the auto download function will only work with direct download links. The mods.json file supplies the following keys: filename, download_link and extraction_locations. Fill in the fields as needed and you should be good to go, if your script requires more complex extractions, you will need to modify the extract_mods function in the script.
+1. Download the latest version of Dow Mod Installer from the [releases page](https://github.com/kwilson21/DoW_Mod_Installer/releases)
+2. Extract `DoW Mod Installer-1.0.0-win.zip` into a folder
+3. Run `DoW Mod Installer.exe` as administrator
+4. Make sure your DoW directory is correct, if not search for the correct directory
+5. Download and search for each individual mod file
+6. Click 'save' to backup your mod configurations
+7. Click install to begin installing all of the mods
+
+Mods will be installed in descending order.
+
+## Advanced
+
+### Editing mods.json
+
+Users are free to modify the `mods.json` with their own mods, which they can then pass on to others. Users must have a `mods.json` file in the same directory as `DoW Mod Installer.exe` in order for the mods to load.
+
+| Key                 | Type             | Description                                                                                                                                                                                                |
+| :------------------ | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `file_name`         | `string`         | The file name for the mod e.g. `example.zip`                                                                                                                                                               |
+| `download_link`     | `string`         | A downlink link to the mod                                                                                                                                                                                 |
+| `extract_locations` | `list of string` | A list of locations in the DoW Directory to extract to                                                                                                                                                     |
+| `modifiers`         | `list of string` | A list of values to be passed directly to 7zip as a command line argument when extracting the mod see the [7zip command line documentation](https://sevenzip.osdn.jp/chm/cmdline/index.htm) for more info. |
 
 ## Authors
 

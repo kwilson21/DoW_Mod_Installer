@@ -1,43 +1,53 @@
 [
   {
-    "file_name": "UA_THB_v1.88.72_FULL.zip",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/UA_THB_v1.88.72_FULL.zip"
+    "file_name": "Ultimate_Apocalypse_Patch_-_188742.zip",
+    "download_link": "https://www.mediafire.com/file/r74491ydd07p3tf/Ultimate_Apocalypse_Patch_-_188742.zip/file"
   },
   {
-    "file_name": "DoW_Mod_Manager_v1.52.7z",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/DoW_Mod_Manager_v1.52.7z"
+    "file_name": "DoW_Mod_Manager_v2.0.1.zip",
+    "download_link": "https://github.com/Fragjacker/DoW-Mod-Manager/releases/download/v2.0.1/DoW_Mod_Manager_v2.0.1.zip"
   },
   {
-    "file_name": "Red_I_Map_Compilation_Revision_III.rar",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/Red_I_Map_Compilation_Revision_III.rar",
-    "extract_locations": ["DXP2"]
+    "file_name": "Red_I_Map_Compilation_Revision_III.zip",
+    "download_link": "https://www.mediafire.com/file/jztwldflnvz4vfu/Red_I_Map_Compilation_Revision_III.zip/file",
+    "extract_locations": ["DXP2"],
+    "modifiers": ["Data"]
   },
   {
-    "file_name": "Red_II_Map_Compilation.rar",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/Red_II_Map_Compilation.rar",
+    "file_name": "Red_II_Map_Compilation.zip",
+    "download_link": "https://www.mediafire.com/file/2qvzmqf33lbdz3d/Red_II_Map_Compilation.zip/file",
     "extract_locations": [
       "UltimateApocalypse_THB/data/scenarios/mp",
       "DXP2/data/scenarios/mp"
     ]
   },
   {
-    "file_name": "Red_III_Map_Compilation_Revision_II.rar",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/Red_III_Map_Compilation_Revision_II.rar",
-    "extract_locations": ["DXP2"]
+    "file_name": "Red_III_Map_Compilation_Revision_II.zip",
+    "download_link": "https://www.mediafire.com/file/jts7m900s0abc3o/Red_III_Map_Compilation_Revision_II.zip/file",
+    "extract_locations": ["DXP2"],
+    "modifiers": ["Data"]
   },
   {
-    "file_name": "Niels_Dutka_Map_Compilation.1.rar",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/Niels_Dutka_Map_Compilation.1.rar",
+    "file_name": "Niels_Dutka_Map_Compilation.1.zip",
+    "download_link": "https://www.mediafire.com/file/xd262f5nfl0cvl1/Niels_Dutka_Map_Compilation.1.zip/file",
     "extract_locations": ["DXP2/data/scenarios/mp"]
   },
   {
-    "file_name": "Art_Repository.rar",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/Art_Repository.rar",
+    "file_name": "Art_Repository.zip",
+    "download_link": "https://www.mediafire.com/file/c91r0m7k684y9b4/Art_Repository.zip/file",
     "extract_locations": ["DXP2/data"]
   },
   {
-    "file_name": "dawn_of_war_maps.rar",
-    "download_link": "https://srv-file7.gofile.io/download/a4FDer/dawn_of_war_maps.rar",
+    "file_name": "dawn_of_war_maps.zip",
+    "download_link": "https://www.mediafire.com/file/wa7vxfmvwawkgfq/dawn_of_war_maps.zip/file",
     "extract_locations": ["DXP2/data"]
+  },
+  {
+    "file_name": "ChaosDaemons2.0.2.zip",
+    "download_link": "https://www.mediafire.com/file/uuoa4a8x1fvxovf/ChaosDaemons2.0.2.zip/file"
+  },
+  {
+    "file_name": "Tyranid_Mod_0.5b2_Installer.exe",
+    "download_link": "https://www.moddb.com/mods/tyranid-mod/downloads/tyranid-mod-v05b2-for-soulstorm"
   }
 ]

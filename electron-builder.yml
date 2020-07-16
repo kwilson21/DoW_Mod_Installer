@@ -1,0 +1,21 @@
+appId: com.example.nextron
+productName: DoW Mod Installer
+copyright: Copyright © 2020 Kazon Wilson
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - mods.json
+      - configurations.json
+      - mods.copy.json
+      - app
+
+extraFiles: mods.json
+
+win:
+  target:
+    - target: zip
+publish: null
