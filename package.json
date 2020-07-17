@@ -2,7 +2,7 @@
   "private": true,
   "name": "DoW-Mod-Installer",
   "description": "DoW Mod Installer is a desktop application designed to automate the process of installing mods mods for Dawn of War Soulstorm.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Kazon Wilson <kazonwilson@gmail.com>",
   "main": "app/background.js",
   "scripts": {
