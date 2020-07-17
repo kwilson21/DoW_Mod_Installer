@@ -5,7 +5,8 @@
   },
   {
     "file_name": "DoW_Mod_Manager_v2.0.1.zip",
-    "download_link": "https://github.com/Fragjacker/DoW-Mod-Manager/releases/download/v2.0.1/DoW_Mod_Manager_v2.0.1.zip"
+    "download_link": "https://github.com/Fragjacker/DoW-Mod-Manager/releases/download/v2.0.1/DoW_Mod_Manager_v2.0.1.zip",
+    "shortcut": "DoW Mod Manager v2.0.1.exe"
   },
   {
     "file_name": "Red_I_Map_Compilation_Revision_III.zip",
@@ -47,7 +48,7 @@
     "download_link": "https://www.mediafire.com/file/uuoa4a8x1fvxovf/ChaosDaemons2.0.2.zip/file"
   },
   {
-    "file_name": "Tyranid_Mod_0.5b2_Installer.exe",
-    "download_link": "https://www.moddb.com/mods/tyranid-mod/downloads/tyranid-mod-v05b2-for-soulstorm"
+    "file_name": "Tyranid_Mod_0.5b2_Installer.zip",
+    "download_link": "https://www.mediafire.com/file/8c0ue9ytbky1rur/Tyranid_Mod_0.5b2_Installer.zip/file"
   }
 ]

@@ -15,6 +15,8 @@ import isArchive from "is-archive";
 import { isEmpty } from "lodash";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import path from "path";
+import os from "os";
 
 import electron from "electron";
 const unhandled =
@@ -69,40 +71,47 @@ export default function Mods() {
     streams: [],
   });
   const [installing, setInstalling] = useState(false);
-  const [percent, setPercent] = useState(0);
+  // const [percent, setPercent] = useState(0);
   const [installed, setInstalled] = useState(false);
 
   const isProd = process.env.NODE_ENV === "production";
-  let pathTo7zip = `${process.cwd()}\\resources\\app.asar.unpacked\\node_modules\\7zip-bin${
+  let pathTo7zip = path.join(
+    process.cwd(),
+    "resources\\app.asar.unpacked\\node_modules\\7zip-bin",
     sevenBin.path7za
-  }`;
+  );
 
   if (!isProd) {
-    pathTo7zip = `${process.cwd()}\\node_modules\\7zip-bin${sevenBin.path7za}`;
+    pathTo7zip = path.join(
+      process.cwd(),
+      "node_modules\\7zip-bin",
+      sevenBin.path7za
+    );
   }
 
   const installMod = (installStream) => {
     let { streams, modsToInstall } = installStream;
     const mod = modsToInstall.pop();
     const idx = configurations.installed_mods.findIndex((e) => e === mod);
+    const temp = mod.file_path.split("\\");
+    const file_path = temp[temp.length - 1];
 
     if (fs.existsSync(configurations.dow_directory)) {
-      if (mod.file_name.endsWith(".exe")) {
-        child.execFileSync(mod.file_path);
+      if (file_path.endsWith(".exe")) {
+        const res = child.execFileSync(mod.file_path);
 
-        setPercent(
-          Math.round((idx / configurations.installed_mods.length) * 100) +
-            percent
-        );
-      } else if (!isArchive(mod.file_name)) {
-        toast(`Incompatible file type!: ${mod.file_name}`);
+        // setPercent(
+        //   Math.floor((idx + 1 / configurations.installed_mods.length) * 100)
+        // );
+      } else if (!isArchive(file_path)) {
+        toast(`Incompatible file type!: ${file_path}`);
       } else if ("extract_locations" in mod) {
         mod.extract_locations.forEach((loc) => {
           const modifiers = "modifiers" in mod ? mod.modifiers : [];
           streams.push(
             extractFull(
               mod.file_path,
-              `${configurations.dow_directory}/${loc}`,
+              path.join(configurations.dow_directory, loc),
               {
                 $bin: pathTo7zip,
                 $raw: ["-aoa", ...modifiers],
@@ -135,23 +144,33 @@ export default function Mods() {
         throw err;
       });
 
-      stream.on("progress", (progress) => {
-        const newPercent =
-          Math.round(
-            (progress.percent / 100) *
-              (((-installStream.modsToInstall.length +
-                installStream.modsToInstall.length +
-                1) /
-                configurations.installed_mods.length) *
-                100)
-          ) + percent;
-        if (newPercent !== percent) setPercent(newPercent);
-      });
+      // stream.on("progress", (progress) => {
+      //   const max = (idx / configurations.installed_mods.length) * 100;
+      //   const min = percent;
+      //   const percentage = progress.percent;
+
+      //   const newPercent = Math.floor((percentage * (max - min)) / 100 + min);
+
+      //   setPercent(newPercent);
+      // });
 
       stream.on("end", () => {
-        const idx = streams.findIndex((s) => s === stream);
-        streams[idx].done = true;
+        const _idx = streams.findIndex((s) => s === stream);
+        streams[_idx].done = true;
         setInstallStream({ ...installStream, streams });
+        if ("shortcut" in mod && (electron.remote || false)) {
+          const res = electron.shell.writeShortcutLink(
+            path.join(
+              os.homedir(),
+              "Desktop",
+              mod.shortcut.replace("exe", "lnk")
+            ),
+            {
+              target: path.join(configurations.dow_directory, mod.shortcut),
+            }
+          );
+          if (!res) toast(`Unable to create shortcut for ${mod.shortcut}`);
+        }
       });
     });
 
@@ -175,7 +194,7 @@ export default function Mods() {
         setInstalled(true);
       }
     }
-  }, [installing, percent, installStream]);
+  }, [installing, installStream]);
 
   const handleModSearch = (item) => {
     if (typeof window !== "undefined") {
@@ -255,9 +274,15 @@ export default function Mods() {
               <Row align="bottom" gutter={12} style={{ margin: "0 auto" }}>
                 <Col flex="auto">
                   {item.file_path && fs.existsSync(item.file_path) ? (
-                    <CheckCircleTwoTone style={{ fontSize: "28px" }} />
+                    <CheckCircleTwoTone
+                      twoToneColor="#52c41a"
+                      style={{ fontSize: "28px" }}
+                    />
                   ) : (
-                    <ExclamationCircleTwoTone style={{ fontSize: "28px" }} />
+                    <ExclamationCircleTwoTone
+                      twoToneColor="#eb2f96"
+                      style={{ fontSize: "28px" }}
+                    />
                   )}
                 </Col>
                 <Col>
@@ -282,9 +307,9 @@ export default function Mods() {
             </List.Item>
           )}
         />
-        {(installing || installed) && (
+        {/* {(installing || installed) && (
           <Progress type="circle" percent={percent} />
-        )}
+        )} */}
         {configurations.installed_mods.every((mod) =>
           fs.existsSync(mod.file_path)
         ) && (
@@ -292,12 +317,21 @@ export default function Mods() {
             type="primary"
             shape="round"
             size="large"
-            icon={<DownloadOutlined />}
+            icon={!installed && <DownloadOutlined />}
             onClick={() => handleInstall()}
             loading={installing}
+            disabled={installed}
           >
-            {installing && !installed ? "Installing Mods..." : "Install Mods"}
+            {installed
+              ? " Mods installed"
+              : [installing ? "Installing Mods..." : "Install Mods"]}
           </Button>
+        )}
+        {installed && (
+          <CheckCircleTwoTone
+            style={{ fontSize: "28px" }}
+            twoToneColor="#52c41a"
+          />
         )}
       </Space>
     </Fragment>
