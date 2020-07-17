@@ -52,7 +52,7 @@ const backFillInstalledMods = () => {
   const configurations = getConfigurations();
   if (configurations.installed_mods.length === 0 && !isEmpty(mods)) {
     mods.reverse().forEach((mod) => {
-      const _mod = { file_path: "", ...mod };
+      const _mod = { file_path: null, ...mod };
       installed_mods = [_mod, ...installed_mods];
     });
   } else {
@@ -167,6 +167,7 @@ export default function Mods() {
             ),
             {
               target: path.join(configurations.dow_directory, mod.shortcut),
+              cwd: configurations.dow_directory,
             }
           );
           if (!res) toast(`Unable to create shortcut for ${mod.shortcut}`);
