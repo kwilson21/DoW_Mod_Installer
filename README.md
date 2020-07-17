@@ -2,7 +2,7 @@
 
 # DoW Mod Installer
 
-DoW Mod Installer is a desktop application designed to automate the process of installing mods mods for Dawn of War Soulstorm.
+DoW Mod Installer is a desktop application designed to automate the process of installing mods for Dawn of War Soulstorm.
 
 ## About
 
